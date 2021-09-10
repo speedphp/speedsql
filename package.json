@@ -1,0 +1,11 @@
+{
+  "name": "speed",
+  "version": "0.0.7",
+  "description": "Autoware the SQL to entity for nestjs.",
+  "author": "speedphp",
+  "license": "MIT License",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
