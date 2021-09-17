@@ -1,2 +1,2 @@
-export * from './select.decorator';
+export * from './speed.decorator';
 export * from './speed.service';
