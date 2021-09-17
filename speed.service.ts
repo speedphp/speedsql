@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Pool } from 'mysql2';
+import { Pool, createPool } from 'mysql2';
 import { Pool as PromisePool } from 'mysql2/promise';
 
 let speedPromisePool: PromisePool;
@@ -11,4 +11,4 @@ export class SpeedService {
         speedPromisePool = pool.promise();
     }
 }
-export { speedPromisePool, resultTypeMap };
+export { speedPromisePool, resultTypeMap, createPool };
