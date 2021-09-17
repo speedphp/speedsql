@@ -1,12 +1,14 @@
-import {Inject, Injectable} from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { Pool } from 'mysql2';
+import { Pool as PromisePool } from 'mysql2/promise';
 
-let GlobalConfig = null;
+let speedPromisePool: PromisePool;
+const resultTypeMap = new Map<string, any>();
 
 @Injectable()
 export class SpeedService {
-    constructor(@Inject('DB_CONNECTION') private connection) {
-        console.log("SpeedService" + connection);
-        GlobalConfig = connection;
+    constructor(@Inject('SPEED_POOL') private pool: Pool) {
+        speedPromisePool = pool.promise();
     }
 }
-export { GlobalConfig };
+export { speedPromisePool, resultTypeMap };
