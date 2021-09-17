@@ -11,4 +11,4 @@ export class SpeedService {
         speedPromisePool = pool.promise();
     }
 }
-export { speedPromisePool, resultTypeMap, createPool };
+export { speedPromisePool, resultTypeMap, createPool, Pool };
