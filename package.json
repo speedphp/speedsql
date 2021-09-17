@@ -5,6 +5,7 @@
   "author": "speedphp",
   "license": "MIT License",
   "dependencies": {
+    "mysql2": "~2.3.0"
   },
   "devDependencies": {
   }
