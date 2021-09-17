@@ -1,12 +1,27 @@
 {
   "name": "speed",
-  "version": "0.0.7",
-  "description": "Autoware the SQL to entity for nestjs.",
+  "version": "1.0.7",
+  "description": "SQL injection for nestjs, like mybatis.",
   "author": "speedphp",
   "license": "MIT License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speedphp/speedsql.git"
+  },
   "dependencies": {
     "mysql2": "~2.3.0"
   },
-  "devDependencies": {
-  }
+  "keywords": [
+    "mybatis",
+    "nestjs",
+    "database",
+    "orm",
+    "typescript",
+    "decorator",
+    "autoware",
+    "inject",
+    "mysql2",
+    "mysql",
+    "speedsql"
+  ]
 }
