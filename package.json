@@ -1,6 +1,6 @@
 {
   "name": "speed",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "SQL injection for nestjs, like mybatis.",
   "author": "speedphp",
   "license": "MIT License",

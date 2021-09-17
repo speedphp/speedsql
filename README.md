@@ -1,2 +1,2 @@
-# speed-npm
-Autoware the SQL to entity for nestjs.
+# SpeedSQL
+SQL injection for nestjs, like mybatis.
