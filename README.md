@@ -6,7 +6,7 @@
 [![downloads](https://badgen.net/npm/dt/speed?color=pink)](https://www.npmjs.com/package/speed)
 [![license](https://badgen.net/github/license/speedphp/speedsql)](https://github.com/SpeedPHP/speedsql/blob/main/LICENSE)
 
-SQL injection for NestJS, similar mybatis.
+SQL Mapper annotations for NestJS, similar MyBatis.
 
 ### Introduction
 
