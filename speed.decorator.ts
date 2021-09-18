@@ -69,11 +69,17 @@ function convertSQLParams(
     );
   }
   const regExp = /#{(\w+)}/g;
-  [...decoratorSQL.matchAll(regExp)].forEach((match) => {
+  let match;
+  while(match = regExp.exec(decoratorSQL)){
     const [replaceTag, matchName] = match;
     decoratorSQL = decoratorSQL.replace(new RegExp(replaceTag, 'g'), '?');
     queryValues.push(argsVal.get(matchName));
-  });
+  }
+  // [...decoratorSQL.matchAll(regExp)].forEach((match) => {
+  //   const [replaceTag, matchName] = match;
+  //   decoratorSQL = decoratorSQL.replace(new RegExp(replaceTag, 'g'), '?');
+  //   queryValues.push(argsVal.get(matchName));
+  // });
   return [decoratorSQL, queryValues];
 }
 
