@@ -1,3 +1,7 @@
+## SpeedSQL 
+
+SQL injection for NestJS, similar mybatis.
+
 ### Introduction
 
 - Follow NestJS Module injection mode.
@@ -6,6 +10,16 @@
 - Support for the Prepared Statements.
 - Support for Entity Injection.
 - Support the Connection pools by mysql2 within.
+
+### Install as a dependency
+
+Setup SpeedSQL (NPM named `speed`) as dependency in *package.json* file `dependencies`
+
+```
+"dependencies": {
+    "speed": "latest"
+}
+```
 
 ### Quick Start
 
@@ -109,7 +123,6 @@ export class AppController {
 
   @Get()
   async getHello() {
-    //const word = await this.appService.getMyWord(new ParamDto('world', 20));
     await this.appService.setUserAge("zzz", 20);
     return "hello world";
   }
@@ -230,9 +243,9 @@ const users: UserDto[] = await this.appService.getRecords('zzz', 10);
 
 ### Select
 
-SpeedSQL uses ```@resultType``` to annotate the resulting entity.
+SpeedSQL uses ```@ResultType``` to annotate the resulting entity.
 
-Select returns an array of annotated entity (```@resultType```).
+Select returns an array of annotated entity (```@ResultType```).
 
 - Create a entity: 
 
