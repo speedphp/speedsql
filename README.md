@@ -1,5 +1,11 @@
 ## SpeedSQL 
 
+[![typescript](https://badgen.net/badge/icon/TypeScript?icon=typescript&label)](https://www.npmjs.com/package/speed)
+[![npm](https://badgen.net/npm/v/speed?color=cyan)](https://www.npmjs.com/package/speed)
+[![publis size](https://badgen.net/packagephobia/publish/speed?color=green)](https://www.npmjs.com/package/speed)
+[![downloads](https://badgen.net/npm/dt/speed?color=pink)](https://www.npmjs.com/package/speed)
+[![license](https://badgen.net/github/license/speedphp/speedsql)](https://github.com/SpeedPHP/speedsql/blob/main/LICENSE)
+
 SQL injection for NestJS, similar mybatis.
 
 ### Introduction
