@@ -8,14 +8,18 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "./",
     "baseUrl": "./",
-    "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
-    "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+    "types": []
+  },
+  "files": [
+    "index.ts",
+    "speed.decorator.ts",
+    "speed.service.ts"
+  ]
 }
