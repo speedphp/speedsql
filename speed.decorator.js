@@ -42,7 +42,7 @@ function convertSQLParams(args, target, propertyKey, decoratorSQL) {
         const existingParameters = Reflect.getOwnMetadata(paramMetadataKey, target, propertyKey);
         argsVal = new Map(existingParameters.map(([argName, argIdx]) => [argName, args[argIdx]]));
     }
-    const regExp = /#{(\w+)}/g;
+    const regExp = /#{(\w+)}/;
     let match;
     while (match = regExp.exec(decoratorSQL)) {
         const [replaceTag, matchName] = match;
