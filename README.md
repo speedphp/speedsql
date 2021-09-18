@@ -11,6 +11,10 @@ SQL injection for NestJS, similar mybatis.
 - Support for Entity Injection.
 - Support the Connection pools by mysql2 within.
 
+### Support Decorators
+
+`@Param`, `@ResultType`, `@Select`, `@Insert`, `@Update`, `@Delete`.
+
 ### Install as a dependency
 
 Setup SpeedSQL (NPM named `speed`) as dependency in *package.json* file `dependencies`
@@ -186,6 +190,8 @@ export class AppModule {}
 
 ### Parameter with named (for Prepared Statements)
 
+`@Param` define the named parameters.
+
 As with MyBatis, SpeedSQL is possible to pass a value to a bind parameter as a named parameter to ensure readability and prevent SQL Injection attacks.
 
 Unlike [Prepared Statements](https://github.com/sidorares/node-mysql2#using-prepared-statements) in mysql2, SpeedSQL can be pass param value with named to make SQL more clearer.
@@ -241,9 +247,11 @@ So we can start to use.
 const users: UserDto[] = await this.appService.getRecords('zzz', 10);
 ```
 
-### Select
+### @Select
 
 SpeedSQL uses ```@ResultType``` to annotate the resulting entity.
+
+`@ResultType` define the data entity for @Selete returns.
 
 Select returns an array of annotated entity (```@ResultType```).
 
@@ -277,7 +285,7 @@ getRecords(@Param('uid') uid:number, @Param('name') name:string): UserDto[] {ret
 ```
 
 
-### Insert
+### @Insert
 
 Parameter with named is also supported in ```@Insert```.
 
@@ -290,7 +298,7 @@ import { Insert } from 'speed';
 addUser(user: UserDto): number {return;}
 ```
 
-### Update and Delete
+### @Update and @Delete
 
 Parameter with named is also supported in ```@Update``` and ```@Delete```.
 
