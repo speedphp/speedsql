@@ -1,6 +1,6 @@
 {
   "name": "speedsql",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "SQL Mapper annotations for NestJS, similar MyBatis.",
   "author": "speedphp",
   "license": "MIT License",

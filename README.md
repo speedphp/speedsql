@@ -37,7 +37,7 @@ Setup SpeedSQL as dependency in *package.json* file `dependencies`
 
 *db.provider.ts*
 ```
-import { createPool, Pool } from 'speed';
+import { createPool, Pool } from 'speedsql';
 
 export const DbProviders = [
   {
@@ -77,7 +77,7 @@ export class UserDto {
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { SpeedService } from 'speed';
+import { SpeedService } from 'speedsql';
 import { DbProviders } from './db.providers';
 
 @Module({
@@ -95,7 +95,7 @@ export class AppModule {}
 *app.service.ts*
 ```
 import { Injectable } from '@nestjs/common';
-import { Delete, Update, Param, ResultType, Insert } from 'speed';
+import { Delete, Update, Param, ResultType, Insert } from 'speedsql';
 import { UserDto } from './entity/user.dto';
 import { ParamDto } from './entity/param.dto';
 
@@ -161,7 +161,7 @@ Like common NestJS Modules, SpeedSQL uses [Asynchronous providers](https://docs.
 
 - Make file ```db.provider.ts```
 ```
-import { createPool, Pool } from 'speed';
+import { createPool, Pool } from 'speedsql';
 
 export const DbProviders = [
   {
@@ -183,7 +183,7 @@ export const DbProviders = [
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { SpeedService } from 'speed';
+import { SpeedService } from 'speedsql';
 import { DbProviders } from './db.providers';
 
 @Module({
@@ -223,7 +223,7 @@ export class ParamDto {
 - Inject values as parameter entities.
 
 ```
-import { ResultType, Select } from 'speed';
+import { ResultType, Select } from 'speedsql';
 
 
 @ResultType(UserDto)
@@ -242,7 +242,7 @@ const users: UserDto[] = await this.appService.getRecords(
 Annotate the parameter value name with the parameter annotation '@Param', which corresponds to the SQL value name.
 
 ```
-import { ResultType, Select, Param } from 'speed';
+import { ResultType, Select, Param } from 'speedsql';
 
 @ResultType(UserDto)
 @Select(select `name`, `age` from `user` where `uid` = #{uid} and `name` = #{name}')
@@ -270,7 +270,7 @@ export class UserDto {
 ```
 - And Select.
 ```
-import { ResultType, Select, Param } from 'speed';
+import { ResultType, Select, Param } from 'speedsql';
 
 
 @ResultType(UserDto)
@@ -283,7 +283,7 @@ If the field name and attribute are not the same, the value of different name wi
 
 
 ```
-import { ResultType, Select, Param } from 'speed';
+import { ResultType, Select, Param } from 'speedsql';
 
 @ResultType(UserDto)
 @Select('select `realname` as `name`, `age` from user where uid = #{uid} and name = #{name} ')
@@ -298,7 +298,7 @@ Parameter with named is also supported in ```@Insert```.
 The ```@Insert``` return value is <u>the new inserted ID</u>, which can also be ignored.
 
 ```
-import { Insert } from 'speed';
+import { Insert } from 'speedsql';
 
 @Insert('insert into user (name, age) value (#{name}, #{age})')
 addUser(user: UserDto): number {return;}
@@ -311,7 +311,7 @@ Parameter with named is also supported in ```@Update``` and ```@Delete```.
 The ```@Update``` and ```@Delete``` returns number is <u>the effected rows</u>, which can also be ignored.
 
 ```
-import { Delete, Update, Param } from 'speed';
+import { Delete, Update, Param } from 'speedsql';
 
 @Update('update user set age = #{age} where name = #{name}')
 setUserAge(@Param('name') name: string, @Param('age') age: number): number {return;}
