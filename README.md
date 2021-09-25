@@ -23,11 +23,11 @@ SQL Mapper annotations for NestJS, similar MyBatis.
 
 ### Install as a dependency
 
-Setup SpeedSQL (NPM named `speed`) as dependency in *package.json* file `dependencies`
+Setup SpeedSQL as dependency in *package.json* file `dependencies`
 
 ```
 "dependencies": {
-    "speed": "latest"
+    "speedsql": "latest"
 }
 ```
 
