@@ -78,7 +78,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SpeedService } from 'speedsql';
-import { DbProviders } from './db.providers';
+import { DbProviders } from './db.provider';
 
 @Module({
   imports: [],
