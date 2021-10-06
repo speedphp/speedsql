@@ -55,7 +55,7 @@ async function queryForExecute(sql, args, target, propertyKey) {
     let sqlValues = [];
     let newSql = sql;
     if (args.length > 0) {
-        [newSql, sqlValues] = convertSQLParams(args, target, propertyKey, sql);
+        [newSql, sqlValues] = convertSQLParams(args, target, propertyKey, newSql);
     }
     const [result] = await speed_service_1.speedPromisePool.query(newSql, sqlValues);
     return result;
@@ -82,11 +82,12 @@ exports.Delete = Update;
 function Select(sql) {
     return function (target, propertyKey, descriptor) {
         descriptor.value = async (...args) => {
+            let newSql = sql;
             let sqlValues = [];
             if (args.length > 0) {
-                [sql, sqlValues] = convertSQLParams(args, target, propertyKey, sql);
+                [newSql, sqlValues] = convertSQLParams(args, target, propertyKey, newSql);
             }
-            const [rows] = await speed_service_1.speedPromisePool.query(sql, sqlValues);
+            const [rows] = await speed_service_1.speedPromisePool.query(newSql, sqlValues);
             if (Object.keys(rows).length === 0) {
                 return;
             }

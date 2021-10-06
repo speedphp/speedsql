@@ -92,7 +92,7 @@ async function queryForExecute(
   let sqlValues = [];
   let newSql = sql;
   if (args.length > 0) {
-    [newSql, sqlValues] = convertSQLParams(args, target, propertyKey, sql);
+    [newSql, sqlValues] = convertSQLParams(args, target, propertyKey, newSql);
   }
   const [result] = await speedPromisePool.query(newSql, sqlValues);
   return <ResultSetHeader>result;
@@ -141,11 +141,12 @@ function Select(sql: string) {
       descriptor: PropertyDescriptor,
   ) {
     descriptor.value = async (...args: any[]) => {
+      let newSql = sql;
       let sqlValues = [];
       if (args.length > 0) {
-        [sql, sqlValues] = convertSQLParams(args, target, propertyKey, sql);
+        [newSql, sqlValues] = convertSQLParams(args, target, propertyKey, newSql);
       }
-      const [rows] = await speedPromisePool.query(sql, sqlValues);
+      const [rows] = await speedPromisePool.query(newSql, sqlValues);
       if (Object.keys(rows).length === 0) {
         return;
       }
