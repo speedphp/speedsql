@@ -1,6 +1,6 @@
 {
   "name": "speedsql",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "SQL Mapper annotations for NestJS, similar MyBatis.",
   "author": "speedphp",
   "license": "MIT License",
@@ -9,7 +9,7 @@
     "url": "https://github.com/speedphp/speedsql.git"
   },
   "dependencies": {
-    "mysql2": "~2.3.0"
+    "mysql2": ">=3.9.7"
   },
   "scripts": {
     "build": "tsc --project ."
